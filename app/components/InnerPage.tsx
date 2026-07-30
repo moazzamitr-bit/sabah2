@@ -8,7 +8,6 @@ import {
   BriefcaseBusiness,
   Building2,
   CalendarDays,
-  CheckCircle2,
   CircleGauge,
   Factory,
   Globe2,
@@ -29,6 +28,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
+import Link from "next/link";
 import type { ReactNode } from "react";
 import { Footer, Header } from "./HomePage";
 
@@ -268,7 +268,7 @@ function PageHero({ page }: { page: InnerPageKey }) {
           transition={{ duration: 0.65 }}
         >
           <nav className="breadcrumbs" aria-label="مسیر صفحه">
-            <a href="/">صفحه اصلی</a>
+            <Link href="/">صفحه اصلی</Link>
             <ArrowLeft size={13} aria-hidden="true" />
             <span>{content.title}</span>
           </nav>
@@ -419,10 +419,10 @@ function SubsidiariesContent() {
                   </div>
                   <small>{company.area}</small>
                   <h2>{company.title}</h2>
-                  <a href="/contact">
+                  <Link href="/contact">
                     ارتباط با گروه
                     <ArrowLeft size={15} />
-                  </a>
+                  </Link>
                 </motion.article>
               </Reveal>
             );
@@ -434,10 +434,10 @@ function SubsidiariesContent() {
             <span>یک مدیریت راهبردی</span>
           </div>
           <strong>۱۱ شرکت، یک زنجیره منسجم</strong>
-          <a href="/value-chain">
+          <Link href="/value-chain">
             مشاهده زنجیره ارزش
             <ArrowLeft size={17} />
-          </a>
+          </Link>
         </Reveal>
       </div>
     </section>
@@ -485,10 +485,10 @@ function ValueChainContent() {
             <span>کنترل یکپارچه عملیات</span>
             <h2>کیفیت در تمام مسیر، از مبدأ تا بازار</h2>
           </div>
-          <a href="/capabilities">
+          <Link href="/capabilities">
             مشاهده توانمندی‌ها
             <ArrowLeft size={18} />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

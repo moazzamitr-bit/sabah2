@@ -6,9 +6,9 @@ const config: Config = {
     extend: {
       colors: {
         sabah: {
-          950: "#06172E",
-          900: "#0A2342",
-          800: "#102F55",
+          950: "#052A24",
+          900: "#073B31",
+          800: "#0D5747",
           gold: "#C99B47",
           "gold-light": "#E0BD75",
         },

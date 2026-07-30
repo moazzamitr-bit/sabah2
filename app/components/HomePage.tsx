@@ -30,6 +30,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 import {
   motion,
   useReducedMotion,
@@ -175,19 +176,19 @@ export function Header() {
   return (
     <header className={`site-header ${scrolled ? "site-header--scrolled" : ""}`}>
       <div className="site-container header-inner">
-        <a href="/" className="logo-link" aria-label="صفحه اصلی گروه صنعتی صباح">
+        <Link href="/" className="logo-link" aria-label="صفحه اصلی گروه صنعتی صباح">
           <SabahMark compact />
-        </a>
+        </Link>
 
         <nav className="desktop-nav" aria-label="ناوبری اصلی">
           {navigation.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
               className={pathname === item.href ? "active" : ""}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -221,10 +222,10 @@ export function Header() {
       >
         <nav aria-label="ناوبری موبایل">
           {navigation.map((item) => (
-            <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
+            <Link key={item.href} href={item.href} onClick={() => setOpen(false)}>
               {item.label}
               <ChevronLeft size={17} aria-hidden="true" />
-            </a>
+            </Link>
           ))}
         </nav>
       </motion.div>
@@ -242,10 +243,10 @@ function CTAButton({
   variant?: "primary" | "outline";
 }) {
   return (
-    <a href={href} className={`cta-button cta-button--${variant}`}>
+    <Link href={href} className={`cta-button cta-button--${variant}`}>
       <span>{children}</span>
       <ArrowLeft size={18} aria-hidden="true" />
-    </a>
+    </Link>
   );
 }
 
@@ -388,10 +389,10 @@ function AboutSection() {
             این گروه صنعتی با در اختیار داشتن ۱۱ شرکت، زنجیره ارزش خود را از
             تأمین تا توزیع و فروش تکمیل کرده است.
           </p>
-          <a href="/value-chain" className="text-link">
+          <Link href="/value-chain" className="text-link">
             مشاهده زنجیره ارزش
             <ArrowLeft size={18} />
-          </a>
+          </Link>
         </Reveal>
         <Reveal className="about-visual" delay={0.12}>
           <div className="about-image" role="img" aria-label="ساختمان مدرن گروه صنعتی صباح">
@@ -587,10 +588,10 @@ export function Footer() {
           <ul>
             {navigation.slice(1).map((item) => (
               <li key={item.href}>
-                <a href={item.href}>
+                <Link href={item.href}>
                   <ChevronLeft size={14} />
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
